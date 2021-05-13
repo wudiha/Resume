@@ -1,3 +1,6 @@
+let areaPdf = document.getElementById('pdf-area');
+let pdfButton = document.getElementById('pdf-button');
+// console.log(pdfButton);
 const showMenu = () => {
 	const toggle = document.getElementsByClassName('nav-toggle');
 	const nav = document.getElementsByClassName('nav-menu');
@@ -9,6 +12,14 @@ const showMenu = () => {
 		});
 	}
 };
+
+function generatePdf() {
+	html2pdf(areaPdf);
+}
+
+pdfButton.addEventListener('click', () => {
+	generatePdf();
+});
 
 function hideMenu() {
 	const nav_link = document.querySelectorAll('.nav_link');
